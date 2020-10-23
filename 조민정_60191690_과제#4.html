@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>조민정/60191690/기초웹프로그래밍 과제#4</title>
+    <style>
+        img{
+            width: 100px;
+        }
+        h1{font-size: 50px;
+        padding-left: 40px;}
+        fieldset{
+            width: 700px;
+            border: dashed 2px rgb(13, 179, 13);
+            border-radius: 10px;
+            margin: 20px 0px 0px 20px;
+            padding: 20px;
+        }
+        legend{
+            color: rgb(13, 179, 13);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        label{
+            display: block;
+            margin: 20px;
+        }
+        label span{
+            display: inline-block;
+            text-align: right;
+            padding-right: 10px;
+        }
+        label.check {
+            display: inline-block; margin: 0px 0px; padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>subway 주문양식</h1>
+    <hr>
+    <form name="fo" action="#" method="get">
+        <fieldset>
+            <legend>회원 정보</legend>
+            <label><span>아이디</span><input type="text" size="15" value=""></label>
+            <label><span>비밀 번호</span><input type="password" size="15" value=""></label>
+            <label><span>배달 받을 주소</span><textarea cols="30" rows="5">주소를 입력하세요</textarea></label>
+            <label><span>배달 시간</span><input type="time"></label>
+        </fieldset>
+        <fieldset>
+            <legend>메뉴</legend>
+            <label><span>기본 메뉴</span><select name="menu">
+                <option value="1" selected>참치</option>
+                <option value="2">에그마요</option>
+                <option value="3">터키 베이컨</option>
+                <option value="4">써브웨이 클럽</option>
+                <option value="5">비엘티</option>
+                <option value="6">이탈리안 비엠티</option>
+                <option value="7">로스트 치킨</option>
+                <option value="8">스테이크 & 치즈</option>
+            </select></label>
+            <label><span>빵 선택</span><input type="text" list="bread"></label>
+                <datalist id="bread">
+                    <option value="하티">
+                    <option value="위트">
+                    <option value="허니오트">
+                    <option value="화이트">
+                    <option value="파마산 오레가노">
+                    <option value="플랫 브레드">
+                </datalist>
+            <h4>추가 선택</h4>
+            <label class="check"><span>베이컨</span><input type="radio" name="add" value="1"></label>
+            <label class="check"><span>더블 미트</span><input type="radio" name="add" value="2"></label>
+            <label class="check"><span>더블 치즈</span><input type="radio" name="add" value="3"></label>
+            <label class="check"><span>오믈렛</span><input type="radio" name="add" value="4"></label>
+            <label class="check"><span>아보카도</span><input type="radio" name="add" value="5"></label>
+            <h4>야채 선택</h4>
+            <label class="check"><span>양배추</span><input type="checkbox" name="add" value="1"></label>
+            <label class="check"><span>토마토</span><input type="checkbox" name="add" value="2"></label>
+            <label class="check"><span>오이</span><input type="checkbox" name="add" value="3"></label>
+            <label class="check"><span>피망</span><input type="checkbox" name="add" value="4"></label>
+            <label class="check"><span>양파</span><input type="checkbox" name="add" value="5"></label>
+            <label class="check"><span>올리브</span><input type="checkbox" name="add" value="6"></label>
+            <label class="check"><span>할라피뇨</span><input type="checkbox" name="add" value="7"></label>
+            
+            <h4>세트 선택</h4>
+            <label><span>음료 추가</span><button type="button"><img src="https://us.123rf.com/450wm/andegro4ka/andegro4ka1504/andegro4ka150400030/39383342-%EC%95%84%EC%9D%B4%EC%8A%A4-%ED%81%90%EB%B8%8C-%EC%BD%9C%EB%9D%BC-%EC%9C%A0%EB%A6%AC-%ED%9D%B0%EC%83%89-%EC%82%AC%EC%8B%A4%EC%A0%81%EC%9D%B8-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98%EC%97%90-%EA%B3%A0%EB%A6%BD.jpg?ver=6" alt="이미지 버튼"></button></label>
+            <label><span>쿠키 추가</span><button type="button"><img src="https://previews.123rf.com/images/rusnickel/rusnickel1703/rusnickel170300018/74633503-%EC%B4%88%EC%BD%9C%EB%A6%BF-%EC%B9%A9-%EC%BF%A0%ED%82%A4-%EC%B4%88%EC%BD%94-%EC%BF%A0%ED%82%A4-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98.jpg" alt="이미지 버튼"></button></label>
+            
+            <h4>리셋 버튼</h4>
+            <label><span>지우기</span><input type="reset" value="취소"></label>
+            <h4>제출 하기</h4>
+            <label><input type="submit" value="완료"></label>
+        </fieldset>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>조민정/60191690/기초웹프로그래밍 과제 #3</title>
+    <style>
+        div.title {
+            color: white;
+            text-shadow: 0 0 3px rgb(102, 0, 60), 0 0 5px rgb(97, 0, 24);
+            font-size: 50px;
+            position: relative;
+            height: 120px;
+            left: 150px;
+            top: 30px;
+        }
+        div.img {
+            padding: 30px 0;
+            height: 180px;
+            width: 800px;
+        }
+        div.main {
+            float: left;
+            margin: 3px;
+            border: 2px;
+            border-radius: 4px;
+            background: rgb(255, 255, 202);
+            padding: 5px;
+            font-weight: bold;
+        }
+        div > img {
+            display: inline-block;
+            width: 150px;
+        }
+        #menubar{
+            background-color: pink;
+        }
+        #menubar ul {
+            margin: 0px;
+            padding: 10px;
+            width: 567px;
+        }
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 0px 15px;
+        }
+        #menubar ul li a {
+            color: darkblue;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        #menubar ul li a:hover{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">내가 좋아하는 음식</div>
+    <nav id="menubar">
+        <ul>
+            <li><a href="http://m.bhc.co.kr/menu/fried.html?menu_type=3">치킨</a></li>
+            <li><a href="http://www.jjokgalbi.co.kr/m/sub/sub_02_01.php">매운쪽갈비</a></li>
+            <li><a href="http://speconomy.com/news/newsview.php?ncode=179541253785758">닭갈비</a></li>
+            <li><a href="https://www.diningcode.com/profile.php?rid=HCCImYgntXxX">파스타</a></li>
+            <li><a href="https://ko.wikipedia.org/wiki/%EB%B9%84%EB%B9%94%EB%B0%A5">비빔밥</a></li>
+        </ul>
+    </nav>
+    <div class="img">
+        <img src="https://www.bhc.co.kr/upload/bhc/menu/BB(0).jpg">
+        <img src="https://imagescdn.gettyimagesbank.com/500/201709/jv10997278.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Dakgalbi.jpg/220px-Dakgalbi.jpg">
+        <img src="https://s3-ap-northeast-1.amazonaws.com/dcreviewsresized/20200602092150_photo1_312eead77f96.jpg">
+        <img src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile30.uf.tistory.com%2Fimage%2F9956D4495BFFCE061FA2F7">
+    </div>
+    <div class="main">
+        내가 가장 좋아하는 치킨은 bhc에 뿌링클 치킨입니다.
+    </div>
+    <div class="main">
+        내가 가장 좋아하는 쪽갈비는 매콤한 쪽갈비이며 성대역에 '구이구이쪽갈비'를 제일 좋아합니다
+    </div>
+    <div class="main">
+        내가 가장 좋아하는 닭갈비는 매콤한 닭갈비입니다.
+    </div>
+    <div class="main">
+        내가 가장 좋아하는 파스타는 매콤한 로제 파스타이며 명지대앞에 '주인백 파스타'를 가장 좋아합니다
+    </div>
+    <div class="main">
+        내가 가장 좋아하는 비빔밥은 꼬막 비빔밥이며 '연안식당'에서 먹는 것을 좋아합니다
+    </div>
+</body>
+</html>

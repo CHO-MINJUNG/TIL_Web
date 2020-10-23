@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>조민정/60191690/기초웹프로그래밍 과제 #2</title>
+    <style>
+        body {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 60px;
+            background-color: aqua;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        a {
+            color: pink;
+        }
+        a:hover{
+            background-color: pink;
+            color: white;
+        }
+        #font {
+            font-family: '궁서체';
+            font-style: italic;
+        }
+        p > span:hover {text-decoration: underline;}
+        p:first-letter {font-weight: bold; font-size: 23px;}
+        p.green {
+            color : green;
+            background-color: rgb(224, 255, 179);
+            text-align: justify;
+            text-indent: 2em;}
+        p.red {
+            color :red;
+            background-color: rgb(250, 190, 190);
+            text-align: justify;
+            text-indent: 2em;}
+        p.yellow {
+            color : rgb(240, 199, 63);
+            background-color: rgb(251, 255, 194);
+            text-align: justify;
+            text-indent: 2em;}
+
+        #to {color: green;}
+        #greento {background-color: green; color: white;}
+        #to2 {color:red}
+        #redto {background-color: red; color: white;}
+        #to3 {color: rgb(240, 199, 63);}
+        #yellowto {background-color: rgb(240, 199, 63); color: white;}
+    </style>
+</head>
+<body>
+    <h1>Color Food</h1><br>
+    <h3 id="to">자연 치유력을 높이는 <span id="greento">그린 푸드</span></h3>
+    <p class="green">
+        초록색 식품은 우리의 몸과 마음을 편안하게 해준다. 특히 초록색 과일과 야채에는
+        풍부한 엽록소가 들어있어 신진대사를 원활하게 해주고, 피로를 풀어 주며, 신체의 자연
+        치유력을 높여준다. <span id="font">매실, 브로컬리, 시금치, 녹차</span> 등이 대표 식품이다.
+    </p>
+    <h3 id="to2">혈액순환을 돕는 <span id="redto">레드 푸드</span></h3>
+    <p class="red">
+        빨간색을 띠는 식품은 활력을 복돋우고 무기력과 피로를 해소해준다. 또한 심장을 맑고 
+        튼튼하게 해주며 혈액순환을 도와준다. 과일과 채소의 붉은 색에는 리코펜과 안토시아닌이 들어 있는데, 이들 
+        영양소는 피를 맑게 하고 식용을 돋우는 작용을 한다. <span id="font">딸기, 토마토, 수박 홍고추, 사과, 팥</span> 등이 대표 식품이다.
+    </p>
+    <h3 id="to3">소화기관에 좋은 <span id="yellowto">옐로 푸드</span></h3>
+    <p class="yellow">
+        노란색 과일과 야채에 함유된 카로티노이드 성분은 향암 효과와 함께 천연 변비약으로서 몸에 쌓여
+        독성을 제거하는 기능을 한다. 또한 비장과 위장의 기능을 복돋워 주고 소화력 증진과 성인병 예방에 도움을 준다.
+        <span id="font">당근, 바나나, 오렌지, 단호박, 고구마</span> 등이 대표 식품이다.
+    </p>
+    <hr>
+    <div>
+    컬러 푸드에 대한 자세한 정보를 알고 싶으면 <a href="">여기를 클릭</a> 하세요.
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>테이블 스타일</title>
+        <style>
+            table{
+                border-collapse: collapse; 
+               }
+            th, td{border: 1px solid brown;
+                   }
+            thead, tfoot{background: brown;
+                         color: white;}
+            tbody > tr:nth-child(even){
+                background: rgb(199, 167, 167);
+            }
+            tbody >tr:hover{ background: yellow;}
+            th, td{width: 100px; height: 30px;}
+            thead th{ height: 25px;}
+            td{ text-align: right;}
+            tr > td:first-child{text-align: center;}
+            tfoot th{text-align: right;}
+            tr > th:first-child{text-align: center;} 
+            th, td{padding : 0px 10px 0px 10px;}
+            caption{ margin: 10px;}
+            
+        </style>
+    </head>
+    <h2>코로나 환자 현황</h2>
+
+        <table>
+            <caption>코로나 지역별 발생동향</caption>
+            <thead>
+                <tr>
+                    <th rowspan="3">국내/국외</th>
+                    <th>시도명</th>
+                    <th>격리중</th>
+                    <th>격리해제</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td>합계</td>
+                    <td>합계</td>
+                    <td>4,697</td>
+                    <td>16,146</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td rowspan="3">국내</td>
+                    <td>서울</td>
+                    <td>4,314</td>
+                    <td>2,225</td>
+                </tr>
+                <tr>
+                    <td>대구</td>
+                    <td>7082</td>
+                    <td>106</td>
+                
+                </tr>
+                <tr>
+                    <td>경기</td>
+                    <td>3,625</td>
+                    <td>1,221</td>
+                
+                </tr>
+                <tr>
+                    <td colspan="2">국외</td>
+                    <td>3,625</td>
+                    <td>1,221</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

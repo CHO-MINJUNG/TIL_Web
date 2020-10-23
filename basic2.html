@@ -3,6 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>3주차 실습1 - 조민정/60191690</title>
+    <style>
+        th, td{border: 1px solid brown;}
+        thead, tfoot{
+            background-color: brown;
+            color:white;
+        }
+        tbody>tr:nth-child(odd){
+            background-color:lightcoral;
+        }
+        tbody>tr:hover{background-color: yellow;}
+
+    </style>
 </head>
 <body>
     <h1>코로나에 관해...</h1>
@@ -43,8 +55,8 @@
         <caption>코로나 지역별 발생 동향</caption>
         <thead>
             <tr>
+                <th>국내/국외</th>
                 <th>시도명</th>
-                <th>누적확진환자</th>
                 <th>격리중</th>
                 <th>격리해제</th>
             </tr>
@@ -52,27 +64,30 @@
         <tfoot>
             <tr>
                 <th>합계</th>
-                <th>21,177</th>
+                <th>합계</th>
                 <th>4,697</th>
                 <th>16,146</th>
             </tr>
         </tfoot>
         <tbody>
             <tr>
+                <td rowspan="3">국내</td>
                 <td>서울</td>
-                <td>4,314</td>
                 <td>2,063</td>
                 <td>2,225</td>
             </tr>
             <tr>
                 <td>대구</td>
-                <td>7,082</td>
                 <td>106</td>
                 <td>6,785</td>
             </tr>
             <tr>
                 <td>경기</td>
-                <td>3,625</td>
+                <td>1,221</td>
+                <td>2,359</td>
+            </tr>
+            <tr>
+                <td colspan="2">국외</td>
                 <td>1,221</td>
                 <td>2,359</td>
             </tr>
