@@ -1,0 +1,76 @@
+<!-- 기말시험: 문서객체모델과 이벤트 핸들러 활용 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>기말1 - 조민정/60191690</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <style>
+    /* 색이 각각 다른 작은 div 박스 스타일 지정 */
+    div.small { width:120px;
+                height:40px;
+                float:left;
+                margin:5px;
+                padding:20px 0px;
+                font-size:18px;
+                font-weight:bold;
+                text-align:center; }
+
+    /* 색 박스들 전체를 감싸고 있는 큰 박스 스타일 지정 */
+    div#big { width:520px;
+              height:150px; }
+  </style>
+
+  <script>
+    // small div 박스의 색을 지정하기 위한 배열
+    var color = ["lightyellow", "khaki", "darkkhaki","olive",
+        "palegreen", "greenyellow", "lawngreen", "yellowgreen",
+        "springgreen", "limegreen", "darkseagreen", "seagreen"];
+
+    // 웹문서 load 되자 마자 각 small div 박스에 배경색과 글자색을 지정 & 이벤트 핸들러 등록
+    $(document).ready(function(){
+      $('#big > div').each( function(index, item){
+        $(item).css('background', color[index]);
+      }).hover(function (){
+        $(this).css('borderRadius','50px').css('boxShadow','5px 8px gray');
+      },function(){
+        $(this).css('borderRadius','0px').css('boxShadow','None').html(function(index,html){
+          return '';
+        })
+      })
+      $('#big > div').each( function(index, item){
+        $(item).click(function(){
+        $(this).html(function(){
+          return color[index];
+        });
+      }); 
+      });
+    });
+
+
+
+
+
+  
+  </script>
+</head>
+
+<body>
+  <h2>박스에 마우스를 올려서 색의 이름을 알아보세요</h2>
+  <div id="big">
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+  </div>
+</body>
+</html>

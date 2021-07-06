@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function (){
+            $('img').css('width',250);
+
+            setInterval(function(){
+                $('img').first().appendTo('body');
+            }, 2000)
+        });
+    </script>
+</head>
+<body>
+    <img src="img/rome.jpg">
+    <img src="img/venice.jpg">
+    <img src="media/spongebob.png">
+    <img src="media/tangsuyuk.png">
+</body>
+</html>

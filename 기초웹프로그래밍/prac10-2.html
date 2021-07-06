@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            let objAry = [
+                { name:'Google', link: 'http://google.com'},
+                {name: 'Naver', link: 'http://naver.com'},
+                {name: 'Daum', link: 'http://daum.net'}
+            ];
+            $.each(objAry,function(index,item){
+                document.body.innerHTML+=
+                `<a href="${item.link}"><h1>${item.name}</h1></a>`;
+            });
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

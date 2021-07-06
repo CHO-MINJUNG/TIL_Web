@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>조민정/60191690/기초웹프로그래밍 과제#7</title>
+    <style>
+        h1 {
+            padding: 10px;
+            padding-left: 40px;
+        }
+        h2 {
+            padding-left: 45px;
+        }
+        #Menu {
+            border: 10px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: rgb(238, 198, 69);
+            margin-bottom: 30px;
+        }
+        #side{
+            padding: 10px;
+            margin: 10px;
+        }
+        #totalP {
+            border: 10px;
+            border-style: solid;
+            border-color: rgb(252, 212, 82);
+            border-radius: 30px;
+            margin-bottom: 30px;
+            padding: 15px;
+            font-size: 1.5em;
+        }
+        form input{
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        img {
+            width: 280px;
+            padding: 20px;
+        }
+        form label{
+            display: inline-block;
+        }
+        
+    </style>
+    <script>
+        function Pizza(name, price, taste){
+            this.name=name;
+            this.price=price;
+            this.taste=taste;
+        }
+        function Sidemenu(name, price){
+            this.name=name;
+            this.price=price;
+        }
+        function Optionmenu(name, price){
+            this.name=name;
+            this.price=price;
+        }
+        var totalMenu = [];
+        var pizzaArray = [new Pizza("고구마피자",25000,"고구마 맛이 나요"), 
+        new Pizza("고르곤졸라",15000,"담백하고 짠 피자맛 맛나요"),
+        new Pizza("스테이크피자", 31000, "비싼 스테이크가 올라가있어요"),
+        new Pizza("더블바베큐피자",27000,"양념바베큐와 직화바베큐의 환상 조합"),
+        new Pizza("소보로피자",20000,"빵으로만 먹던 소보로를 피자로 만나다")];       
+        var sideArray = [
+            new Sidemenu("감자튀김", 7000),
+            new Sidemenu("치즈볼", 4000),
+            new Sidemenu("토마토 파스타", 8000),
+            new Sidemenu("버팔로 윙", 12000)
+        ];
+        var optionArray = [
+            new Optionmenu("치즈크러스트 업그레이드", 2000),
+            new Optionmenu("핫소스 추가", 500),
+            new Optionmenu("갈릭디핑소스 추가", 700),
+            new Optionmenu("파마산치즈 추가", 500)
+        ];
+
+        var totalPrice = 0;
+
+        function over(obj){
+            var text = document.getElementById("p"+obj.id);
+            var id = parseInt(obj.id);
+            text.innerHTML="메뉴: " + pizzaArray[id].name +"<br>"+
+            "가격: "+pizzaArray[id].price +"<br>"+
+            "맛: "+pizzaArray[id].taste ;
+            text.style.paddingLeft="60px";
+        }
+        function out(obj){
+            var text = document.getElementById("p"+obj.id);
+            var id = parseInt(obj.id);
+            text.innerHTML="";
+        }
+        function dbclick(obj){
+            var check = document.getElementById("ch"+obj.id);
+            check.innerHTML="checked !";
+            check.style.paddingLeft="50px";
+            check.style.fontSize="1.25em";
+            check.style.height ="15px"; 
+            check.style.fontWeight= "bold";
+            check.style.color = "yellow";
+            check.style.textShadow = "0px 0px 5px black";
+            totalPrice = totalPrice+ pizzaArray[parseInt(obj.id)].price;
+            totalMenu.push(pizzaArray[obj.id].name);
+            finalPrice();
+        }
+        function finalPrice(){
+            var final = document.getElementById("totalP");
+            final.innerHTML = "총가격: "+totalPrice+"원";
+        }
+        function sideMenu(){
+            var sel = document.getElementById("side");
+            totalPrice += sideArray[sel.options[sel.selectedIndex].value].price;
+            totalMenu.push(sideArray[sel.options[sel.selectedIndex].value].name)
+            finalPrice();
+        }
+        function option(){
+            var optionmenu = document.getElementsByName("optionadd");
+            for(var i=0; i<optionmenu.length; i++){
+                if(optionmenu[i].checked ==true){
+                    totalPrice+=optionArray[optionmenu[i].value].price;
+                    totalMenu.push(optionArray[optionmenu[i].value].name);
+                    finalPrice();
+                }
+            }
+        }
+        function submitB(){
+            var username = document.getElementById("user");
+            alert(`${username.value}님의 ${totalMenu.toString()} 주문이 완료되었습니다.`)
+        }
+    </script>
+</head>
+<body>
+    <h1>좀인정 피자하우스</h1>
+    <hr>
+    <br> 
+    <div id="Menu">
+    <h2>메인 메뉴</h2>
+    <form>
+        <label id="0" ondblclick="dbclick(this)" onmouseout="out(this)" onmouseover="over(this)"><img id="img0" src="http://www.hoonipizza.co.kr/wp-content/uploads/2018/07/p03.png"><p id="ch0"></p><p id="p0"></p></label>
+        <label id="1" ondblclick="dbclick(this)" onmouseout="out(this)" onmouseover="over(this)"><img id="img1" src="http://www.hoonipizza.co.kr/wp-content/uploads/2018/07/p07.png" ><p id="ch1"></p><p id="p1"></p></label>
+        <label id="2" ondblclick="dbclick(this)" onmouseout="out(this)" onmouseover="over(this)"><img id="img2" src="http://www.hoonipizza.co.kr/wp-content/uploads/2018/07/p01.png" ><p id="ch2"></p><p id="p2"></p></label>
+        <label id="3" ondblclick="dbclick(this)" onmouseout="out(this)" onmouseover="over(this)"><img id="img3" src="http://www.hoonipizza.co.kr/wp-content/uploads/2018/07/p04.png" ><p id="ch3"></p><p id="p3"></p></label>
+        <label id="4" ondblclick="dbclick(this)" onmouseout="out(this)" onmouseover="over(this)"><img id="img4" src="http://www.hoonipizza.co.kr/wp-content/uploads/2018/07/p08.png" ><p id="ch4"></p><p id="p4"></p></label>
+    </form>
+    </div>
+    <div id="Menu">
+    <h2>사이드 메뉴</h2>
+    <form>
+        <select id="side" onchange="sideMenu()">
+            <option value="">선택 안함</option>
+            <option value="0">감자튀김 [7000원]</option>
+            <option value="1">치즈볼 [4000원]</option>
+            <option value="2">토마토 파스타 [8000원]</option>
+            <option value="3">버팔로 윙 [12000원]</option>
+        </select>
+    </form>
+    </div>
+    <div id="Menu">
+        <h2>추가 선택</h2>
+        <form>
+            <input type="radio" name="optionadd" value="0">치즈크러스트 업그레이드 [2000원]
+            <input type="radio" name="optionadd" value="1">핫소스 추가 [500원]
+            <input type="radio" name="optionadd" value="2">갈릭디핑소스 추가 [700원]
+            <input type="radio" name="optionadd" value="3">파마산치즈 추가 [500원]
+            <input type="button" value="선택 완료" onclick="option()">
+        </form>
+    </div>
+    <div id="totalP">
+        총가격: 0원
+    </div>
+    <div id="Menu">
+        <h2>고객 정보</h2>
+        <form>
+            이름: <input type="text" id="user">
+            <input type="submit"" value="주문" id="subbutton" onclick="submitB()">
+        </form>
+    </div>
+</body>
+</html>

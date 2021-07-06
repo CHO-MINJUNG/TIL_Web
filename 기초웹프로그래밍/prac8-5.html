@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{position: absolute;}
+        img{position: absolute;}
+    </style>
+</head>
+<body>
+    <h3>z-index 스타일 프로퍼티</h3>
+    <hr>
+    <div>
+        <img src="media/spade-A.png" onclick="imgbat" width="100" height="140" alt="">
+        <img src="media/spade-2.png" onclick="imgbat" width="100" height="140" alt="">
+        <img src="media/spade-3.png" onclick="imgbat" width="100" height="140" alt="">
+        <img src="media/spade-7.png" onclick="imgbat" width="100" height="140" alt="">
+    </div>
+    <script>
+        var imgA = document.getElementsByTagName("img");
+            for(var i=0;i<imgA.length;i++){
+                imgA[i].style.zIndex=i;
+            }
+        function imgbat(){
+            
+        }
+    </script>
+</body>
+</html>

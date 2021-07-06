@@ -1,0 +1,70 @@
+<!-- 내이름 내학번 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>퀴즈 2-2 조민정/60191690</title>
+  <style>   
+    table {  border-collapse: collapse;  }
+    th, td {  padding: 5px 20px;
+    	        border: 1px solid blue;
+              text-align: center;  }
+  </style>
+</head>
+
+<body>
+  <h3>책 재고 및 가격</h3>
+  <table>
+    <tr>
+        <th>제목</th>
+        <th>정가</th>
+        <th>재고</th> 
+        <th>판매</th> 
+        <th>입고</th>                 
+    </tr>
+    <tr>
+        <td id="title"></td>
+        <td id="price"></td>
+        <td id="stock"></td> 
+        <td><input type="button" value="판매" onclick="book.sell(1);"></td>
+        <td><input type="button" value="입고" onclick="book.warehousing(1);"></td>
+    </tr>
+  </table>
+
+  <script>
+    let book = {
+        title : "명품 웹프로그래밍",
+        price : 28000,
+        stock : 2,
+
+        printInfo: function() {
+            for ( let p in this ) {
+                if ( p != "printInfo" && p != "sell" && p != "warehousing")
+                document.getElementById(p).innerHTML=this[p];
+            }
+        },
+
+        // sell() - "판매" 버튼 눌렀을 때 실행될 내용을 작성하시오. 
+        sell:  function(a){
+          if (this.stock==0){
+            alert(`${this.title}의 재고가 부족합니다!`)
+          }else{
+            this.stock-=a;
+            alert(`${this.title}이 1권 팔렸습니다!`)        
+          }
+          this.printInfo();
+        },
+
+        // warehousing() - "입고" 버튼 눌렀을 때 실행될 내용을 작성하시오. 
+        warehousing: function(a){
+          alert(`${this.title}이 1권 입고되었습니다!`)
+          this.stock+=1;
+          this.printInfo();
+        }
+      
+    };
+
+    book.printInfo();
+  </script>
+</body>
+</html>
